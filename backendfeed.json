@@ -1,0 +1,62 @@
+[
+    {
+        "name": "backend-feed",
+        "image": "omarzztelcocloud/udagram-api-feed:v4",
+        "cpu": 1024,
+        "memory": 2048,
+        "portMappings": [
+            {
+                "containerPort": 8080,
+                "hostPort": 8080,
+                "protocol": "tcp"
+            }
+        ],
+        "environment": [
+            {
+                "name": "POSTGRES_USERNAME",
+                "value": "postgres"
+            },
+            {
+                "name": "POSTGRES_PASSWORD",
+                "value": "postgres"
+            },
+            {
+                "name": "POSTGRES_DB",
+                "value": "postgres"
+            },
+            {
+                "name": "POSTGRES_HOST",
+                "value": "postgres.cvywzglj6gkw.us-east-1.rds.amazonaws.com"
+            },
+            {
+                "name": "AWS_REGION",
+                "value": "us-east-1"
+            },
+            {
+                "name": "AWS_PROFILE",
+                "value": "default"
+            },
+            {
+                "name": "AWS_BUCKET",
+                "value": "mybucket-639483503131"
+            },
+            {
+                "name": "JWT_SECRET",
+                "value": "testing"
+            },
+            {
+                "name": "URL",
+                "value": "http://localhost:8100"
+            }
+        ],
+        "logConfiguration": {
+            "logDriver": "awslogs",
+            "options": {
+                "awslogs-create-group": "true",
+                "awslogs-group": "awslogs-backend",
+                "awslogs-region": "us-east-1",
+                "awslogs-stream-prefix": "awslogs-example"
+            }
+        }
+    }
+]

@@ -1,0 +1,24 @@
+[ 
+   {
+        "name": "reverseproxy",
+        "image": "omarzztelcocloud/udagram-reverseproxy:v12",
+        "cpu": 1024,
+        "memory": 2048,
+        "portMappings": [
+            {
+                "containerPort": 8080,
+                "hostPort": 8080,
+                "protocol": "tcp"
+            }
+           ],
+        "logConfiguration": {
+            "logDriver": "awslogs",
+            "options": {
+                "awslogs-create-group": "true",
+                "awslogs-group": "awslogs-nginx",
+                "awslogs-region": "us-east-1",
+                "awslogs-stream-prefix": "awslogs-example"
+            }
+        }
+    }
+]
